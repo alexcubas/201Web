@@ -1,4 +1,6 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
+import { motion, Variants } from "framer-motion";
+import { useEffect } from "react";
 
 type BlockMainContentType = {
     title: string;
@@ -11,9 +13,29 @@ export default function BlockMainContent({
     text,
     title,
 }: BlockMainContentType) {
+    const cardVariants: Variants = {
+        offscreen: {
+            opacity: 0.5,
+            y: 200,
+        },
+        onscreen: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                bounce: 0.5,
+                duration: 2,
+            },
+        },
+    };
     return (
         <Flex
+            as={motion.div}
+            variants={cardVariants}
+            whileInView="onscreen"
+            initial="offscreen"
             direction={"column"}
+            viewport={{ once: true }}
             w={"500px"}
             h={"400px"}
             align={"center"}
