@@ -25,6 +25,7 @@ export default function AboutCompanyContainer() {
                 <Flex w={"40%"}>
                     <Image
                         src={"/Images/aboutImages/sobre201web.png"}
+                        alt={"sobre201web"}
                         w={"750px"}
                     />
                 </Flex>

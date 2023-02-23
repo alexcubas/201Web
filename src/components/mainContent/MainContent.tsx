@@ -37,7 +37,7 @@ export default function MainContent() {
                 ease: [0, 0.3, 0.6, 1.0],
             },
         });
-    }, []);
+    });
     return (
         <Flex>
             <Flex w={"50%"} direction={"column"} mt={"150px"}>
@@ -116,7 +116,12 @@ export default function MainContent() {
                 initial={{ y: 150, opacity: 0 }}
             >
                 <Flex mt={"50px"} as={motion.div} animate={controlsImage}>
-                    <Image w={"750px"} h={"750px"} src="Website-Creator.png" />
+                    <Image
+                        w={"750px"}
+                        h={"750px"}
+                        alt={"Website-Creator image"}
+                        src="Website-Creator.png"
+                    />
                 </Flex>
             </Flex>
         </Flex>

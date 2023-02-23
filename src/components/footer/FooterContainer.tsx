@@ -12,7 +12,11 @@ export default function FooterContainer() {
             fontSize={"20px"}
         >
             <Flex>
-                <Image src={"/Images/footerImage.png"} mt={"-30px"} />
+                <Image
+                    src={"/Images/footerImage.png"}
+                    alt={"imagem footer"}
+                    mt={"-30px"}
+                />
             </Flex>
             <Flex direction={"column"} mt={"30px"}>
                 <Text textStyle={"Bold"} fontSize={"30px"}>

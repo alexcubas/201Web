@@ -46,7 +46,7 @@ export default function BlockMainContent({
             borderRadius={"20px"}
             boxShadow={"-14px 14px 14px 3px #0000000F"}
         >
-            <Image src={image} w={"80px"} h={"80px"} />
+            <Image src={image} alt={image} w={"80px"} h={"80px"} />
             <Text textColor={"black"} textStyle={"Bold"} fontSize={"30px"}>
                 {title}
             </Text>
