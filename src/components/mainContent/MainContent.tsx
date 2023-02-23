@@ -1,9 +1,22 @@
-import { Flex, Text, Button, Image } from "@chakra-ui/react";
+import {
+    Flex,
+    Text,
+    Button,
+    Image,
+    useBreakpointValue,
+} from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 export default function MainContent() {
+    const isWideVersion = useBreakpointValue({
+        base: true,
+        sm: true,
+        md: true,
+        lg: true,
+        xlg: false,
+    });
     const controls = useAnimation();
     const controlsImage = useAnimation();
     const controlsImage1 = useAnimation();
@@ -117,8 +130,8 @@ export default function MainContent() {
             >
                 <Flex mt={"50px"} as={motion.div} animate={controlsImage}>
                     <Image
-                        w={"750px"}
-                        h={"750px"}
+                        w={isWideVersion ? "600px" : "750px"}
+                        h={isWideVersion ? "600px" : "750px"}
                         alt={"Website-Creator image"}
                         src="Website-Creator.png"
                     />

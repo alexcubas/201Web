@@ -36,7 +36,7 @@ export default function BlockMainContent({
             initial="offscreen"
             direction={"column"}
             viewport={{ once: true }}
-            w={"500px"}
+            w={["300px", "300px", "350px", "400px", "400px", "500px"]}
             h={"400px"}
             align={"center"}
             justify={"center"}

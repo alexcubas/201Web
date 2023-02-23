@@ -1,6 +1,17 @@
 import { extendTheme } from "@chakra-ui/react";
 
+//Usa isso pra validar a página que vc quer
+const breakpoints = {
+    base: "0rem",
+    sm: "30rem", //480px
+    md: "64rem", //1024px
+    lg: "86rem", // 1360px
+    xlg: "120rem", //1920px
+};
+
 export const theme = extendTheme({
+    breakpoints,
+
     colors: {
         blue: "#657EFF",
         white: "#ffffff",
