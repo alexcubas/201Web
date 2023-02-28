@@ -1,7 +1,22 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import AboutBox from "./AboutBox";
+import AboutBoxMob from "./AboutBoxMob";
 
 export default function AboutContainer() {
+    const isWideVersion = useBreakpointValue({
+        base: true,
+        sm: true,
+        md: true,
+        lg: false,
+        xlg: false,
+    });
+    const versionMob = useBreakpointValue({
+        base: true,
+        sm: true,
+        md: false,
+        lg: false,
+        xlg: false,
+    });
     return (
         <Flex w={"100%"} direction={"column"}>
             <Flex
@@ -13,44 +28,67 @@ export default function AboutContainer() {
                 gap={"10px"}
                 h={"250px"}
             >
-                <Text textStyle={"Bold"} fontSize={"40px"} color={"gray"}>
+                <Text
+                    textStyle={"Bold"}
+                    fontSize={versionMob ? "30px" : "40px"}
+                    color={"gray"}
+                >
                     Saiba mais sobre nós
                 </Text>
                 <Text
                     textStyle={"Regular"}
-                    fontSize={"25px"}
+                    fontSize={versionMob ? "20px" : "25px"}
                     color={"gray"}
-                    w={"20%"}
+                    w={isWideVersion ? "60%" : "20%"}
                 >
                     Conheça um pouco sobre os fundadores da 201Web
                 </Text>
             </Flex>
-            <Flex
-                h={"475px"}
-                bg={"#F1EFEF"}
-                w={"100%"}
-                justify={"space-around"}
-                align={"center"}
-            >
-                <AboutBox
-                    image="/Images/aboutImages/muriloPhoto.png"
-                    name="Murilo Cordeiro"
-                    about="Programador Front-End"
-                    text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
-                />
-                <AboutBox
-                    image="/Images/aboutImages/muriloPhoto.png"
-                    name="Murilo Cordeiro"
-                    about="Programador Front-End"
-                    text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
-                />
-                {/* <AboutBox
-                    image="/Images/aboutImages/muriloPhoto.png"
-                    name="Murilo Cordeiro"
-                    about="Programador Front-End"
-                    text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
-                /> */}
-            </Flex>
+            {versionMob ? (
+                <Flex
+                    h={"550px"}
+                    bg={"#F1EFEF"}
+                    w={"100%"}
+                    justify={"space-evenly"}
+                    align={"center"}
+                    direction={"column"}
+                >
+                    <AboutBoxMob
+                        image="/Images/aboutImages/muriloPhoto.png"
+                        name="Murilo Cordeiro"
+                        about="Programador Front-End"
+                        text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
+                    />
+                    <AboutBoxMob
+                        image="/Images/aboutImages/muriloPhoto.png"
+                        name="Murilo Cordeiro"
+                        about="Programador Front-End"
+                        text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
+                    />
+                </Flex>
+            ) : (
+                <Flex
+                    h={"475px"}
+                    bg={"#F1EFEF"}
+                    w={"100%"}
+                    justify={"space-around"}
+                    align={"center"}
+                    direction={"row"}
+                >
+                    <AboutBox
+                        image="/Images/aboutImages/muriloPhoto.png"
+                        name="Murilo Cordeiro"
+                        about="Programador Front-End"
+                        text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
+                    />
+                    <AboutBox
+                        image="/Images/aboutImages/muriloPhoto.png"
+                        name="Murilo Cordeiro"
+                        about="Programador Front-End"
+                        text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
+                    />
+                </Flex>
+            )}
         </Flex>
     );
 }

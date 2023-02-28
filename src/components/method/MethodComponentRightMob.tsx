@@ -7,7 +7,7 @@ type MethodComponentType = {
     text: string;
 };
 
-export default function MethodComponentRight({
+export default function MethodComponentRightMob({
     image,
     text,
     title,
@@ -42,21 +42,31 @@ export default function MethodComponentRight({
             whileInView="onscreen"
             initial="offscreen"
             viewport={{ once: true }}
-            h={versionMob ? "700px" : "500px"}
+            h={versionMob ? "650px" : "500px"}
             bg={
                 "linear-gradient(90deg, rgba(255,255,255,0.8463760504201681) 0%, rgba(241,239,239,1) 68%)"
             }
             align={"center"}
-            justify={"flex-end"}
+            // justify={"flex-end"}
             direction={versionMob ? "column" : "row"}
         >
             <Flex
                 direction={"column"}
                 justify={versionMob ? "flex-start" : "center"}
                 align={versionMob ? "center" : "flex-start"}
-                w={"50%"}
+                w={versionMob ? "80%" : "50%"}
             >
-                <Text textStyle={"Bold"} fontSize={"35px"} textAlign={"center"}>
+                <Img
+                    src={image}
+                    h={versionMob ? "50%" : "90%"}
+                    ml={versionMob ? "0px" : "60px"}
+                />
+                <Text
+                    textStyle={"Bold"}
+                    fontSize={"35px"}
+                    textAlign={"center"}
+                    mt={"20px"}
+                >
                     {title}
                 </Text>
                 <Text
@@ -64,16 +74,10 @@ export default function MethodComponentRight({
                     textColor={"gray"}
                     textStyle={"Regular"}
                     fontSize={"20px"}
-                    mb={versionMob ? "20px" : "0px"}
                 >
                     {text}
                 </Text>
             </Flex>
-            <Img
-                src={image}
-                h={versionMob ? "50%" : "90%"}
-                ml={versionMob ? "0px" : "60px"}
-            />
         </Flex>
     );
 }

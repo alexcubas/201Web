@@ -9,32 +9,13 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-export default function MainContent() {
-    const isWideVersion = useBreakpointValue({
-        base: true,
-        sm: true,
-        md: true,
-        lg: false,
-        xlg: false,
-    });
-
-    const textAlign = isWideVersion ? "center" : "start";
-
+export default function MainContentMobile() {
     const defaultAlign = {
         base: "center",
         sm: "center",
         md: "center",
         lg: "start",
         xlg: "start",
-    };
-
-    const styleTypeAnimation = {
-        fontSize: "50px",
-        width: "700px",
-        fontFamily: "Poppins",
-        color: "#657EFF",
-        fontWeight: "700",
-        textAlign,
     };
 
     const controls = useAnimation();
@@ -73,12 +54,7 @@ export default function MainContent() {
     });
     return (
         <Flex>
-            <Flex
-                w={isWideVersion ? "100%" : "50%"}
-                direction={"column"}
-                mt={isWideVersion ? "0px" : "150px"}
-                align={isWideVersion ? "center" : "start"}
-            >
+            <Flex w={"100%"} direction={"column"} mt={"0px"} align={"center"}>
                 <Flex
                     as={motion.div}
                     animate={controlsImage}
@@ -114,25 +90,14 @@ export default function MainContent() {
                         cursor={true}
                         repeat={Infinity}
                         speed={30}
-                        style={
-                            isWideVersion
-                                ? {
-                                      fontSize: "50px",
-                                      width: "700px",
-                                      fontFamily: "Poppins",
-                                      color: "#657EFF",
-                                      fontWeight: "700",
-                                      textAlign: "start",
-                                  }
-                                : {
-                                      fontSize: "50px",
-                                      width: "700px",
-                                      fontFamily: "Poppins",
-                                      color: "#657EFF",
-                                      fontWeight: "700",
-                                      textAlign: "center",
-                                  }
-                        }
+                        style={{
+                            fontSize: "25px",
+                            width: "350px",
+                            fontFamily: "Poppins",
+                            color: "#657EFF",
+                            fontWeight: "700",
+                            textAlign: "center",
+                        }}
                     />
                 </Flex>
 
@@ -141,39 +106,15 @@ export default function MainContent() {
                     direction={"column"}
                     initial={{ y: 150, opacity: 0 }}
                     animate={controls}
-                    align={{
-                        base: "center",
-                        sm: "center",
-                        md: "center",
-                        lg: "flex-start",
-                        xlg: "flex-start",
-                    }}
+                    align={"center"}
                 >
-                    <Text
-                        w={"600px"}
-                        textStyle={"Regular"}
-                        fontSize={"20px"}
-                        textColor={"gray"}
-                        textAlign={{
-                            base: "center",
-                            sm: "center",
-                            md: "center",
-                            lg: "start",
-                            xlg: "start",
-                        }}
-                    >
-                        Soluções pra você ou para o seu negócio utilizando as
-                        mais novas tecnologias de programação disponíveis no
-                        mercado.
-                    </Text>
                     <Button
                         borderRadius={"20px"}
                         bg={"blue"}
                         textColor={"white"}
-                        w={"450px"}
+                        w={"95%"}
                         h={"62px"}
                         fontSize={"25px"}
-                        mt={"40px"}
                         mb={"20px"}
                     >
                         Quero vender mais!
@@ -182,9 +123,9 @@ export default function MainContent() {
                         borderRadius={"20px"}
                         border={"2px solid #657EFF"}
                         textColor={"blue"}
-                        w={"450px"}
+                        w={"95%"}
                         h={"62px"}
-                        fontSize={"25px"}
+                        fontSize={"20px"}
                     >
                         Quero falar pelo WhatsApp
                     </Button>
@@ -208,8 +149,8 @@ export default function MainContent() {
                     }}
                 >
                     <Image
-                        w={isWideVersion ? "600px" : "750px"}
-                        h={isWideVersion ? "600px" : "750px"}
+                        w={"600px"}
+                        h={"600px"}
                         alt={"Website-Creator image"}
                         src="Website-Creator.png"
                     />

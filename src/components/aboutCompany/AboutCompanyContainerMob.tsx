@@ -1,13 +1,6 @@
 import { Flex, Text, Image, useBreakpointValue } from "@chakra-ui/react";
 
-export default function AboutCompanyContainer() {
-    const isWideVersion = useBreakpointValue({
-        base: true,
-        sm: true,
-        md: true,
-        lg: false,
-        xlg: false,
-    });
+export default function AboutCompanyContainerMobile() {
     return (
         <Flex direction={"column"} textColor={"gray"} w={"95%"}>
             <Flex
@@ -16,44 +9,44 @@ export default function AboutCompanyContainer() {
                 justify={"center"}
                 align={"center"}
             >
-                <Text textStyle={"Bold"} fontSize={"40px"}>
+                <Text textStyle={"Bold"} fontSize={"25px"}>
                     Sobre a 201Web
                 </Text>
                 <Text
                     textStyle={"Regular"}
-                    fontSize={"25px"}
-                    w={"400px"}
+                    fontSize={"15px"}
+                    w={"90%"}
                     textAlign={"center"}
                 >
                     Conheça um pouco mais sobre a 201Web
                 </Text>
             </Flex>
             <Flex
-                gap={"20px"}
+                gap={"40px"}
                 align={"center"}
-                mb={"200px"}
-                direction={isWideVersion ? "column" : "row"}
+                mb={"50px"}
+                direction={"column"}
             >
-                <Flex w={"40%"}>
+                <Flex w={"90%"}>
                     <Image
                         src={"/Images/aboutImages/sobre201web.png"}
                         alt={"sobre201web"}
-                        w={"750px"}
                     />
                 </Flex>
                 <Flex
-                    w={isWideVersion ? "90%" : "55%"}
+                    w={"90%"}
                     direction={"column"}
                     textStyle={"Regular"}
-                    fontSize={"25px"}
-                    textAlign={isWideVersion ? "center" : "start"}
+                    fontSize={"18px"}
+                    textAlign={"center"}
+                    gap={"15px"}
                 >
                     <Text>
                         A
                         <Text
                             as={"span"}
                             textStyle={"Bold"}
-                            fontSize={"62px"}
+                            fontSize={"25px"}
                             mx={"5px"}
                             lineHeight={"1"}
                         >
@@ -70,7 +63,7 @@ export default function AboutCompanyContainer() {
                         <Text
                             as={"span"}
                             textStyle={"Bold"}
-                            fontSize={"62px"}
+                            fontSize={"25px"}
                             mx={"5px"}
                             lineHeight={"1"}
                         >
@@ -89,7 +82,7 @@ export default function AboutCompanyContainer() {
                         <Text
                             as={"span"}
                             textStyle={"Bold"}
-                            fontSize={"62px"}
+                            fontSize={"25px"}
                             mx={"5px"}
                             lineHeight={"1"}
                         >

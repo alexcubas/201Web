@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, useBreakpointValue } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import ButtonContact from "./ButtonContact";
@@ -6,6 +6,13 @@ import IconHeader from "./IconHeader";
 import NavBar from "./NavBar";
 
 export default function HeaderComponent() {
+    const isWideVersion = useBreakpointValue({
+        base: true,
+        sm: true,
+        md: true,
+        lg: false,
+        xlg: false,
+    });
     const controls = useAnimation();
     useEffect(() => {
         controls.start({
@@ -35,10 +42,11 @@ export default function HeaderComponent() {
                 fontSize={"20px"}
                 color="gray"
                 textStyle={"Bold"}
+                display={isWideVersion ? "none" : "flex"}
             >
                 <NavBar />
             </Flex>
-            <Flex>
+            <Flex display={isWideVersion ? "none" : "flex"}>
                 <ButtonContact />
             </Flex>
         </Flex>

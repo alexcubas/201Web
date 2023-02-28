@@ -1,9 +1,23 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, useBreakpointValue } from "@chakra-ui/react";
 import BlockMainContent from "../patterns/BlockMainContent";
 
 export default function BlockCotainers() {
+    const isWideVersion = useBreakpointValue({
+        base: true,
+        sm: true,
+        md: true,
+        lg: false,
+        xlg: false,
+    });
     return (
-        <Flex w={"100%"} justify={"space-between"}>
+        <Flex
+            w={"100%"}
+            justify={"space-between"}
+            align={isWideVersion ? "center" : "center"}
+            direction={isWideVersion ? "column" : "row"}
+            gap={isWideVersion ? "50px" : "0px"}
+            mt={isWideVersion ? "50px" : "0px"}
+        >
             <BlockMainContent
                 title="Landing Pages"
                 text="Uma landing page é uma página projetada para capturar atenção do visitante. É simples, direta e com layout claro e de fácil navegação."

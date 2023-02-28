@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 import { motion, Variants } from "framer-motion";
 import { useEffect } from "react";
 
@@ -13,6 +13,14 @@ export default function BlockMainContent({
     text,
     title,
 }: BlockMainContentType) {
+    const isWideVersion = useBreakpointValue({
+        base: true,
+        sm: true,
+        md: true,
+        lg: true,
+        xlg: false,
+    });
+
     const cardVariants: Variants = {
         offscreen: {
             opacity: 0.5,
@@ -36,12 +44,12 @@ export default function BlockMainContent({
             initial="offscreen"
             direction={"column"}
             viewport={{ once: true }}
-            w={["300px", "300px", "350px", "400px", "400px", "500px"]}
-            h={"400px"}
+            w={isWideVersion ? "350px" : "500px"}
+            h={isWideVersion ? "500px" : "400px"}
             align={"center"}
             justify={"center"}
             bg={"white"}
-            paddingX={"70px"}
+            paddingX={isWideVersion ? "20px" : "70px"}
             gap={"20px"}
             borderRadius={"20px"}
             boxShadow={"-14px 14px 14px 3px #0000000F"}
