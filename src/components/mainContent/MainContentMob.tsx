@@ -54,31 +54,29 @@ export default function MainContentMobile() {
     });
     return (
         <Flex>
-            <Flex w={"100%"} direction={"column"} mt={"0px"} align={"center"}>
+            <Flex w={"100%"} direction={"column"} align={"center"}>
                 <Flex
                     as={motion.div}
-                    animate={controlsImage}
-                    display={{
-                        base: "flex",
-                        sm: "flex",
-                        md: "flex",
-                        lg: "none",
-                        xlg: "none",
-                    }}
+                    animate={controlsImage1}
+                    initial={{ y: 150, opacity: 0 }}
                 >
-                    <Image
-                        w={{ base: "300px", sm: "500px", md: "600px" }}
-                        h={{ base: "300px", sm: "500px", md: "600px" }}
-                        alt={"Website-Creator image"}
-                        src="Website-Creator.png"
-                    />
+                    <Flex as={motion.div} animate={controlsImage}>
+                        <Image
+                            w={{ base: "300px", sm: "500px", md: "600px" }}
+                            h={{ base: "300px", sm: "500px", md: "600px" }}
+                            alt={"Website-Creator image"}
+                            src="Website-Creator.png"
+                        />
+                    </Flex>
                 </Flex>
+
                 <Flex
-                    h={"150px"}
+                    // h={"150px"}
                     as={motion.div}
                     direction={"column"}
                     initial={{ y: 150, opacity: 0 }}
                     animate={controls}
+                    my={"15px"}
                 >
                     <TypeAnimation
                         sequence={[
@@ -108,6 +106,24 @@ export default function MainContentMobile() {
                     animate={controls}
                     align={"center"}
                 >
+                    <Text
+                        w={"90%"}
+                        textStyle={"Regular"}
+                        fontSize={"16px"}
+                        textColor={"gray"}
+                        mb={"20px"}
+                        textAlign={{
+                            base: "center",
+                            sm: "center",
+                            md: "center",
+                            lg: "start",
+                            xlg: "start",
+                        }}
+                    >
+                        Soluções pra você ou para o seu negócio utilizando as
+                        mais novas tecnologias de programação disponíveis no
+                        mercado.
+                    </Text>
                     <Button
                         borderRadius={"20px"}
                         bg={"blue"}
@@ -131,7 +147,7 @@ export default function MainContentMobile() {
                     </Button>
                 </Flex>
             </Flex>
-            <Flex
+            {/* <Flex
                 as={motion.div}
                 animate={controlsImage1}
                 initial={{ y: 150, opacity: 0 }}
@@ -155,7 +171,7 @@ export default function MainContentMobile() {
                         src="Website-Creator.png"
                     />
                 </Flex>
-            </Flex>
+            </Flex> */}
         </Flex>
     );
 }
