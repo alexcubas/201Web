@@ -1,3 +1,4 @@
+import phoneLogic from "@/helpers/phoneLogic";
 import {
     Flex,
     Text,
@@ -9,7 +10,11 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-export default function MainContentMobile() {
+type MainContentMobileType = {
+    scrollTo: any;
+};
+
+export default function MainContentMobile({ scrollTo }: MainContentMobileType) {
     const defaultAlign = {
         base: "center",
         sm: "center",
@@ -52,6 +57,7 @@ export default function MainContentMobile() {
             },
         });
     });
+
     return (
         <Flex>
             <Flex w={"100%"} direction={"column"} align={"center"}>
@@ -132,8 +138,9 @@ export default function MainContentMobile() {
                         h={"62px"}
                         fontSize={"25px"}
                         mb={"20px"}
+                        onClick={() => scrollTo("Conhecer")}
                     >
-                        Quero vender mais!
+                        Quero conhecer mais!
                     </Button>
                     <Button
                         borderRadius={"20px"}
@@ -142,36 +149,12 @@ export default function MainContentMobile() {
                         w={"95%"}
                         h={"62px"}
                         fontSize={"20px"}
+                        onClick={() => phoneLogic()}
                     >
                         Quero falar pelo WhatsApp
                     </Button>
                 </Flex>
             </Flex>
-            {/* <Flex
-                as={motion.div}
-                animate={controlsImage1}
-                initial={{ y: 150, opacity: 0 }}
-            >
-                <Flex
-                    mt={"50px"}
-                    as={motion.div}
-                    animate={controlsImage}
-                    display={{
-                        base: "none",
-                        sm: "none",
-                        md: "none",
-                        lg: "flex",
-                        xlg: "flex",
-                    }}
-                >
-                    <Image
-                        w={"600px"}
-                        h={"600px"}
-                        alt={"Website-Creator image"}
-                        src="Website-Creator.png"
-                    />
-                </Flex>
-            </Flex> */}
         </Flex>
     );
 }

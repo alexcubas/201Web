@@ -46,7 +46,7 @@ export default function AboutContainer() {
             </Flex>
             {versionMob ? (
                 <Flex
-                    h={"550px"}
+                    h={"650px"}
                     bg={"#F1EFEF"}
                     w={"100%"}
                     justify={"space-evenly"}
@@ -54,9 +54,9 @@ export default function AboutContainer() {
                     direction={"column"}
                 >
                     <AboutBoxMob
-                        image="/Images/aboutImages/muriloPhoto.png"
-                        name="Murilo Cordeiro"
-                        about="Programador Front-End"
+                        image="/Images/aboutImages/alexPhoto.jpeg"
+                        name="Alexsandro Cubas"
+                        about="Programador Full-Stack"
                         text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
                     />
                     <AboutBoxMob
@@ -76,9 +76,9 @@ export default function AboutContainer() {
                     direction={"row"}
                 >
                     <AboutBox
-                        image="/Images/aboutImages/muriloPhoto.png"
-                        name="Murilo Cordeiro"
-                        about="Programador Front-End"
+                        image="/Images/aboutImages/alexPhoto.jpeg"
+                        name="Alexsandro Cubas"
+                        about="Programador Full-Stack"
                         text="“Desenvolvedor front-end á 2 anos, acredito que programar é mais que apenas digitar código”"
                     />
                     <AboutBox

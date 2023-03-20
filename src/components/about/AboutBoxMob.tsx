@@ -15,7 +15,8 @@ export default function AboutBoxMob({
 }: AboutBoxType) {
     return (
         <Flex
-            h={"220px"}
+            position={"relative"}
+            h={"280px"}
             w={"90%"}
             bg={"white"}
             borderRadius={"20px"}
@@ -23,14 +24,40 @@ export default function AboutBoxMob({
             align={"center"}
             justify={"center"}
             gap={"10px"}
+            direction={"column"}
         >
-            <Image
-                src={image}
-                alt={image}
-                w={"140px"}
-                h={"220px"}
-                objectFit={"contain"}
-            />
+            <Flex
+                w={"105px"}
+                h={"105px"}
+                border={"1px solid #bcc7ff"}
+                borderRadius={"50%"}
+                display={"grid"}
+                placeItems={"center"}
+                // margin={"0 auto .5rem"}
+            >
+                <Image
+                    w={"96px"}
+                    borderRadius={"50%"}
+                    src={image}
+                    alt={image}
+                    // w={"140px"}
+                    h={"96px"}
+                    objectPosition={
+                        image === "/Images/aboutImages/muriloPhoto.png"
+                            ? "0px -10px"
+                            : "0px 0px"
+                    }
+                    objectFit={"cover"}
+                />
+            </Flex>
+            <Flex direction={"column"} textAlign={"center"}>
+                <Text textStyle={"Bold"} fontSize={"20px"}>
+                    {name}
+                </Text>
+                <Text textStyle={"Regular"} fontSize={"12px"}>
+                    {about}
+                </Text>
+            </Flex>
             <Flex
                 textColor={"gray"}
                 direction={"column"}
@@ -41,20 +68,13 @@ export default function AboutBoxMob({
             >
                 <Text
                     textStyle={"Light"}
+                    textAlign={"center"}
                     fontSize={"15px"}
                     fontStyle={"italic"}
                     textColor={"#151932"}
                 >
                     {text}
                 </Text>
-                <Flex direction={"column"}>
-                    <Text textStyle={"Bold"} fontSize={"20px"}>
-                        {name}
-                    </Text>
-                    <Text textStyle={"Regular"} fontSize={"12px"}>
-                        {about}
-                    </Text>
-                </Flex>
             </Flex>
         </Flex>
     );

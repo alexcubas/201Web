@@ -5,7 +5,11 @@ import ButtonContact from "./ButtonContact";
 import IconHeader from "./IconHeader";
 import NavBar from "./NavBar";
 
-export default function HeaderComponent() {
+type HeaderComponentType = {
+    scrollTo: any;
+};
+
+export default function HeaderComponent({ scrollTo }: HeaderComponentType) {
     const isWideVersion = useBreakpointValue({
         base: true,
         sm: true,
@@ -44,7 +48,7 @@ export default function HeaderComponent() {
                 textStyle={"Bold"}
                 display={isWideVersion ? "none" : "flex"}
             >
-                <NavBar />
+                <NavBar scrollTo={scrollTo} />
             </Flex>
             <Flex display={isWideVersion ? "none" : "flex"}>
                 <ButtonContact />

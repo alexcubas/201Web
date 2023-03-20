@@ -1,3 +1,4 @@
+import phoneLogic from "@/helpers/phoneLogic";
 import { Button } from "@chakra-ui/react";
 
 export default function ButtonContact() {
@@ -13,6 +14,7 @@ export default function ButtonContact() {
                 w={"270px"}
                 h={"62px"}
                 _hover={{ boxShadow: "0px 0px 23px 9px #0000002F" }}
+                onClick={() => phoneLogic()}
             >
                 Fale com a gente!
             </Button>

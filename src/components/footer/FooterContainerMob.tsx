@@ -1,3 +1,4 @@
+import phoneLogic from "@/helpers/phoneLogic";
 import { Flex, Image, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 
 export default function FooterContainerMobile() {
@@ -47,7 +48,9 @@ export default function FooterContainerMobile() {
                     Contato
                 </Text>
                 <UnorderedList>
-                    <ListItem>(41) 98434-1194 </ListItem>
+                    <ListItem onClick={() => phoneLogic()}>
+                        (41) 98434-1194{" "}
+                    </ListItem>
                     <ListItem>201web@gmail.com</ListItem>
                 </UnorderedList>
             </Flex>

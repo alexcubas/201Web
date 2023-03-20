@@ -1,12 +1,22 @@
-import { Text } from "@chakra-ui/react";
+import { Text, Button } from "@chakra-ui/react";
 
-export default function NavBar() {
+type NavBarType = {
+    scrollTo: any;
+};
+
+export default function NavBar({ scrollTo }: NavBarType) {
     return (
         <>
             <Text color="blue">Início</Text>
-            <Text>Sobre nós</Text>
-            <Text>Quem somos?</Text>
-            <Text>Contate-nos</Text>
+            <Text cursor={"pointer"} onClick={() => scrollTo("Sobre")}>
+                Sobre nós
+            </Text>
+            <Text cursor={"pointer"} onClick={() => scrollTo("Quem somos?")}>
+                Quem somos?
+            </Text>
+            <Text cursor={"pointer"} onClick={() => scrollTo("Contate-nos")}>
+                Contate-nos
+            </Text>
         </>
     );
 }

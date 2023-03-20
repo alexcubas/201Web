@@ -19,13 +19,29 @@ export default function AboutBox({ image, text, about, name }: AboutBoxType) {
             justify={"center"}
             gap={"15px"}
         >
-            <Image
-                src={image}
-                alt={image}
-                w={"200px"}
-                h={"300px"}
-                objectFit={"contain"}
-            />
+            <Flex
+                h={"200px"}
+                w={"150px"}
+                borderRadius={"15px"}
+                align={"center"}
+                bg={
+                    image === "/Images/aboutImages/alexPhoto.jpeg"
+                        ? "#E1DCDC"
+                        : "white"
+                }
+            >
+                <Image
+                    src={image}
+                    alt={image}
+                    w={"150px"}
+                    h={
+                        image === "/Images/aboutImages/alexPhoto.jpeg"
+                            ? "150px"
+                            : "200px"
+                    }
+                    // objectFit={"contain"}
+                />
+            </Flex>
             <Flex
                 textColor={"gray"}
                 direction={"column"}

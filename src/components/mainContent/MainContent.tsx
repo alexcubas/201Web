@@ -1,3 +1,4 @@
+import phoneLogic from "@/helpers/phoneLogic";
 import {
     Flex,
     Text,
@@ -9,7 +10,11 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-export default function MainContent() {
+type MainContentType = {
+    scrollTo: any;
+};
+
+export default function MainContent({ scrollTo }: MainContentType) {
     const isWideVersion = useBreakpointValue({
         base: true,
         sm: true,
@@ -71,6 +76,7 @@ export default function MainContent() {
             },
         });
     });
+
     return (
         <Flex>
             <Flex
@@ -175,8 +181,9 @@ export default function MainContent() {
                         fontSize={"25px"}
                         mt={"40px"}
                         mb={"20px"}
+                        onClick={() => scrollTo("Conhecer")}
                     >
-                        Quero vender mais!
+                        Quero conhecer mais!
                     </Button>
                     <Button
                         borderRadius={"20px"}
@@ -185,6 +192,7 @@ export default function MainContent() {
                         w={"450px"}
                         h={"62px"}
                         fontSize={"25px"}
+                        onClick={() => phoneLogic()}
                     >
                         Quero falar pelo WhatsApp
                     </Button>
